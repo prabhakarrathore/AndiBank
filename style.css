@@ -65,12 +65,21 @@
 .text-container h2 {
     font-size: 56pt;
     color: #05066d;
+    position: relative;
 }
 
 .text-container p {
     font-size: 30pt;
     color: #252b5b;
     margin-top: 10px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* === RESPONSIVE DESIGN === */
