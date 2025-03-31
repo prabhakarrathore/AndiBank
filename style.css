@@ -13,7 +13,8 @@
 .page {
     page-break-after: always;
     /* Forces new page when printing */
-    padding: 50px;
+    /* padding: 50px; */
+    z-index: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,14 +36,14 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: auto;
-    margin: auto;
     text-align: left;
-    gap: 20px;
+    padding: 50px;
 }
 
 /* Image on the Left */
 .image-container {
+    padding: 50px;
+    z-index: 1;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -58,18 +59,25 @@
 
 /* Text on the Right */
 .text-container {
+    z-index: 1;
     flex: 1;
     padding-left: 40px;
 }
 
+.text-container h1 {
+    font-size: 50pt;
+    color: #05066d;
+    position: relative;
+}
+
 .text-container h2 {
-    font-size: 56pt;
+    font-size: 35pt;
     color: #05066d;
     position: relative;
 }
 
 .text-container p {
-    font-size: 30pt;
+    font-size: 20pt;
     color: #252b5b;
     margin-top: 10px;
 }
@@ -150,4 +158,15 @@
     .text-container p {
         font-size: 1em;
     }
+}
+
+.circle1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #bcddf5;
+    filter: blur(30px);
+    position: absolute;
+    /* opacity: 0.; */
+    z-index: 0;
 }

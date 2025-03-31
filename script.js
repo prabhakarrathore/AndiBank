@@ -180,19 +180,12 @@ const data = [
 
 
 const contentDiv = document.getElementById("content");
-const colors = ["#2377b5", "#1a70af"]; // Alternating background colors
+const colors = ["", "#a6d2f2", "#90c7ee", "#7abceb", "#64b1e8", "#4ea6e4", "#379ae1", "#218fde", "#1e81c8", "#1b73b1", "#1a70af", "#17649b", "#145685"]; // Alternating background colors
 
 contentDiv.innerHTML = data.map((item, itemIndex) => {
     const backgroundColor = colors[itemIndex % colors.length]; // Alternate colors for each section
 
     return `
-    <!-- Section Title -->
-    <div class="page0" style="background-color: ${backgroundColor};">
-    <div class="section-title">
-                <h1>${item.section}</h1>
-            </div>
-        </div>
-
         <!-- Content Pages -->
         ${Object.keys(item)
             .filter(key => key.startsWith("heading")) // Find all headings
@@ -212,11 +205,38 @@ contentDiv.innerHTML = data.map((item, itemIndex) => {
 
                     <!-- Right: Subheading & Text -->
                     <div class="text-container">
-                        <h2>${heading}</h2>
-                        <p>${text}</p>
+                    <div class="section-title">
+                        <h1>${item.section !== undefined ? item.section : ""}</h1>
+                    </div>
+                        <h2>${heading !== undefined ? heading : ""}</h2>
+                        <p>${text !== undefined ? text : ""}</p>
                     </div>
                 </div>`;
             }).join("") // Join all mapped sections
         }
     `;
 }).join(""); // Join all sections into final HTML
+
+function generateCirclePositions() {
+    return Array.from({ length: 1000 }, () => ({
+        x: Math.floor(Math.random() * window.innerWidth - 150),  // Full width
+        y: Math.floor(Math.random() * document.body.scrollHeight) // Full height
+    }));
+}
+
+function placeCircles() {
+    const positions = generateCirclePositions();
+    const container = document.body; // Append circles to the full document
+
+    positions.forEach((pos) => {
+        const circle = document.createElement("div");
+        circle.classList.add("circle1");
+        circle.style.position = "absolute";
+        circle.style.left = `${pos.x}px`;
+        circle.style.top = `${pos.y}px`;
+        container.appendChild(circle);
+    });
+}
+
+// Run the function when the page loads
+window.onload = placeCircles;
