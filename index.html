@@ -4,36 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andi Bank1</title>
+    <title>ANDi Banking Software Suite - Home</title>
     <link rel="stylesheet" href="style.css">
-
+    <!-- Optional: Font Awesome for Icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <!-- ... other head elements ... -->
 </head>
 
 <body>
-    <div class="page content-container" style="background-color: #b0c5ff;">
 
-        <!-- Left: Image -->
-        <div class="image-container">
-            <img class="content-image" src="./images/download.png" style="mix-blend-mode: multiply; box-shadow: none;"
-                height="100%" width="100%" alt="image">
+    <header>
+        <div class="container">
+            <img src="images/download.png" alt="ANDi Banking Logo" class="header-logo">
+            <h1>ANDi Banking Software</h1>
+            <p>Comprehensive & Secure Banking Platform</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-software.html">About Software</a></li>
+                <li><a href="admin-features.html">Admin Module Features</a></li>
+                <li><a href="user-features.html">User Module Features</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="images/ANDi Banking1 (29)-merged_page-0001.jpg" alt="Modern Banking Interface">
+                <div class="caption">Intuitive Interfaces for Users & Admins</div>
+            </div>
+            <div class="slide">
+                <img src="images/ANDi Banking1 (29)-merged_page-0006.jpg" alt="Secure Transactions">
+                <div class="caption">Robust Security for Financial Operations</div>
+            </div>
+            <div class="slide">
+                <img src="images/ANDi Banking1 (29)-merged_page-0016.jpg" alt="Feature Rich Platform">
+                <div class="caption">Scalable Features for Growing Needs</div>
+            </div>
+            <a class="prev">❮</a>
+            <a class="next">❯</a>
         </div>
 
-        <!-- Right: Subheading & Text -->
-        <div class="text-container">
-            <h2 style="font-size: 72pt;">ANDi Banking</h2>
-            <p style="margin-top:50% ;">Name : Prabhakar Rathore </p>
-            <p>Phone No. : 8287744079</p>
-            <p> Email : prabhakarrathore15@gmail.com</p>
+        <div class="container">
+            <div class="page-content" style="text-align: center; margin-top: 30px;">
+                <h2>Welcome to the ANDi Banking Software Showcase</h2>
+                <p>This site provides an overview of the ANDi Banking platform, detailing its core modules and features
+                    for both administrators and end-users. Explore the sections above to learn more about its
+                    capabilities.</p>
+                <a href="about-software.html" class="btn btn-primary" style="margin-top: 15px;">Learn More About the
+                    Software</a>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <div id="content"></div>
+    <footer>
+        <div class="container">
+            <p>© 2023 ANDi Software Solutions. All Rights Reserved.</p>
+            <!-- Adjust copyright/footer text as needed -->
+        </div>
+    </footer>
 
-    <script src="./script.js">
-
-
-    </script>
-
+    <script src="script.js" defer></script>
 </body>
 
 </html>
